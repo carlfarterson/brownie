@@ -1,0 +1,941 @@
+
+_cli
+    __init__.py
+
+    __main__.py
+        __version__
+        __doc__
+        main()
+
+    accounts.py
+        __doc__
+        main()
+        _list()
+        _new()
+        _generate()
+        _import()
+        _export()
+        _password()
+        _delete()
+
+    analyze.py
+        __doc__
+        ANALYSIS_MODES
+        SEVERITY_COLOURS
+        DASHBOARD_BASE_URL
+        SubmissionPipeline
+            get_mythx_client (staticmethod)
+            prepare_requests()
+            construct_request_from_artifact (classmethod)
+            send_requests()
+            wait_for_jobs()
+            generate_highlighting_report()
+            generate_stdout_report()
+        print_console_report()
+        main()
+
+    bake.py
+        __doc__
+        main()
+
+    compile.py
+        __doc__
+        main()
+
+    console.py
+        __doc__
+        main()
+        Console
+            _dir()
+            _console_write()
+            raw_input()
+            showsyntaxerror()
+            showtraceback()
+            runsource()
+        _dir_color()
+        SanitizedFileHistory
+            store_string()
+        ConsoleCompleter
+            get_completions()
+        TestAutoSuggest
+            get_suggestion()
+        _parse_document()
+        _get_obj()
+
+    ethpm.py
+        __doc__
+        main()
+        _list()
+        _install()
+        _unlink()
+        _remove()
+        _create()
+        _release()
+        _all()
+
+    gui.py
+        __doc__
+        main()
+
+    init.py
+        __doc__
+        main()
+
+    networks.py
+        __doc__
+        DEV_REQUIRED
+        PROD_REQUIRED
+        OPTIONAL
+        DEV_CMD_SETTINGS
+        main()
+        _list()
+        _add()
+        _modify()
+        _delete()
+        _import()
+        _export()
+        _parse_args()
+        _print_simple_network_description()
+        _print_verbose_network_description()
+        _validate_network()
+
+    pm.py
+        __doc__
+        main()
+        _list()
+        _clone()
+        _delete()
+        _install()
+        _split_id()
+        _format_pkg()
+
+    run.py
+        __doc__
+        main()
+
+    test.py
+        __doc__
+        main()
+
+
+_gui
+    __init__.py
+
+    bases.py
+        ToggleButton
+            toggle()
+            toggle_on()
+            toggle_off()
+        SelectBox
+            _select()
+
+    console.py
+        ConsoleButton
+            toggle_on()
+            toggle_off()
+        Console
+            write()
+            append()
+            clear()
+            read()
+
+    opcodes.py
+        OpcodeList
+            grid()
+            insert()
+            delete_all()
+            clear_selection()
+            selection_set()
+            set_opcodes()
+            _select_bind()
+            _seek()
+            _highlight_opcode()
+            _highlight_jumps()
+            _highlight_revert()
+            _get_prev()
+        ScopingButton
+            toggle_on()
+            toggle_off()
+        _get_targets()
+
+    report.py
+        ReportSelect
+            _select()
+        HighlightSelect
+            set_values()
+            show()
+            hide()
+            _select()
+            toggle_off()
+
+    root.py
+        Root
+            active_report (property)
+            get_active_contract()
+            set_active_contract()
+            destroy()
+        MainFrame
+        ToolbarFrame
+
+    source.py
+        SourceNoteBook
+            add()
+            get_frame()
+            hide()
+            show()
+            set_visible()
+            active_frame()
+            set_active()
+            key_left()
+            key_right()
+            _key()
+            apply_scope()
+            clear_scope()
+            show_msg()
+            mark()
+            unmark()
+            unmark_all()
+            unbind_all()
+            _search()
+        SourceFrame
+            config()
+            clear_highlight()
+            highlight()
+            tag_add()
+            tag_ranges()
+            tag_remove()
+            _offset_to_coord()
+            _coord_to_offset()
+            _scrollbar_scroll()
+            _text_scroll()
+        ContractSelect
+            _select()
+
+    styles.py
+        TEXT_STYLE
+        TEXT_COLORS
+        BUTTON_STYLE
+        set_style()
+
+    tooltip.py
+        ToolTip
+            enter()
+            show()
+            leave()
+
+
+convert
+    __init__.py
+
+    datatypes.py
+        UNITS
+        WeiInputTypes
+        Wei
+        _to_wei()
+        _return_int()
+        Fixed
+        _to_fixed()
+        EthAddress
+        _address_compare()
+        HexString
+        _hex_compare()
+        _to_bytes()
+        _to_hex()
+        ReturnValue
+            count()
+            dict()
+            index()
+            items()
+            keys()
+        _kwargtuple_compare()
+        _convert_str()
+
+    main.py
+        to_uint()
+        to_int()
+        to_decimal()
+        to_address()
+        to_bytes()
+        to_bool()
+        to_string()
+
+    normalize.py
+        format_input()
+        format_output()
+        format_event()
+        _format_tuple()
+        _format_array()
+        _format_single()
+        _check_array()
+        _get_abi_types()
+
+    utils.py
+        get_int_bounds()
+        get_type_strings()
+        build_function_signature()
+        build_function_selector()
+
+
+data
+    default-config.yaml
+    ethpm-config.yaml
+    network-config.yaml
+
+
+network
+    __init__.py
+        __all__
+        __console_dir__
+        accounts
+        rpc
+        history
+
+    account.py
+        __tracebackhide__
+        rpc
+        Accounts
+            _reset()
+            _revert()
+            __contains__()
+            add()
+            load()
+            at()
+            remove()
+            clear()
+        PublicKeyAccount
+            __eq__()
+            balance()
+            nonce (property)
+        _PrivateKeyAccount
+            _gas_limit()
+            _gas_price()
+            _check_for_revert()
+            deploy()
+            estimate_gas()
+            transfer()
+        Account
+            _transact()
+        LocalAccount
+            save()
+            _transact()
+        _raise_or_return_tx()
+
+    alert.py
+        __console_dir__
+        __tracebackhide__
+        _instances()
+        Alert
+            _loop()
+            is_alive()
+            wait()
+            stop()
+        new()
+        show()
+        stop_all()
+
+    contract.py
+        __tracebackhide__
+        _ContractBase
+            abi (property)
+            _name (property)
+            info()
+            get_method()
+        ContractContainer
+            _reset()
+            _revert()
+            remove()
+            at()
+            _add_from_tx()
+        ContractConstructor
+            payable (property)
+            __call__()
+            _autosuggest()
+            encode_input()
+        _DeployedContractBase
+            _check_and_set()
+            balance()
+            _deployment_path()
+            _save_deployment()
+            _delete_deployment()
+        Contract
+            _deprecated_init()
+            from_abi (classmethod)
+            from_ethpm (classmethod)
+            from_explorer (classmethod)
+            set_alias()
+            alias (property)
+        ProjectContract
+        OverloadedMethod
+        _ContractMethod
+            payable (property)
+            info()
+            call()
+            transact()
+            encode_input()
+            decode_output()
+        ContractTx
+            _autosuggest()
+            __call__()
+        ContractCall
+            __call__()
+        _get_tx()
+        _get_method_object()
+        _inputs()
+        _verify_deployed_code()
+        _print_natspec()
+        _contract_method_autosuggest()
+
+    event.py
+        __tracebackhide__
+        EventDict
+            count()
+            items()
+            keys()
+            values()
+        _EventItem
+            items()
+            keys()
+            values()
+        __get_path()
+        _get_topics()
+        _decode_logs()
+        _decode_trace()
+        _topics
+
+    main.py
+        rpc
+        connect()
+        disconnect()
+        show_active()
+        is_connected()
+        gas_limit()
+        gas_price()
+
+    rpc.py
+        CLI_FLAGS
+        EVM_VERSIONS
+        EVM_DEFAULT
+        __tracebackhide__
+        _revert_refs
+        Rpc
+            _at_exit()
+            launch()
+            attach()
+            kill()
+            _request()
+            _snap()
+            _revert()
+            _internal_snap()
+            _internal_revert()
+            is_active()
+            is_child()
+            evm_version()
+            evm_compatible()
+            time()
+            sleep()
+            mine()
+            snapshot()
+            revert()
+            reset()
+        _revert_register()
+        _notify_registry()
+        _check_connections()
+
+    state.py
+        __tracebackhide__
+        _contract_map
+        cur
+        TxHistory
+            __contains__()
+            _reset()
+            _revert()
+            _add_tx()
+            clear()
+            copy()
+            from_sender()
+            to_receiver()
+            of_address()
+            _gas()
+        _find_contract()
+        _get_current_dependencies()
+        _add_contract()
+        _remove_contract()
+        _get_deployment()
+        _add_deployment()
+
+    transaction.py
+        __tracebackhide__
+        history
+        trace_property()
+        trace_inspection()
+        TransactionReceipt
+            __slots__
+            events (trace_property)
+            internal_transfers (trace_property)
+            modified_state (trace_property)
+            new_contracts (trace_property)
+            return_value (trace_property)
+            revert_msg (trace_property)
+            trace (trace_property)
+            _await_confirmation()
+            _set_from_tx()
+            _set_from_receipt()
+            _confirm_output()
+            _get_trace()
+            _confirmed_trace()
+            _reverted_trace()
+            _expand_trace()
+            _add_internal_xfer()
+            _full_name()
+            info()
+            call_trace (trace_inspection)
+            traceback()
+            _traceback_string (trace_inspection)
+            error()
+            _error_string (trace_inspection)
+            source()
+            _source_string (trace_inspection)
+        _format_source()
+        _step_compare()
+        _check_last()
+        _step_print()
+        _get_memory()
+        _get_last_map()
+
+    web3.py
+        __tracebackhide__
+        _chain_uri_cache
+        Web3
+            connect()
+            disconnect()
+            isConnected()
+            _mainnet (property)
+            genesis_hash (property)
+            chain_uri (property)
+        _expand_environment_vars
+        _get_path()
+        _resolve_address()
+        web3
+        _ens_cache
+
+
+project
+    compiler
+        __init__.py
+            STANDARD_JSON
+            EVM_SOLC_VERSIONS
+            compile_and_format()
+            generate_input_json()
+            _get_solc_remappings()
+            _get_allow_paths()
+            compile_from_input_json()
+            generate_build_json()
+            _sources_dict()
+
+        solidity.py
+            solcx_logger
+            sh
+            AVAILABLE_SOLC_VERSIONS
+            get_version()
+            compile_from_input_json()
+            set_solc_version()
+            install_solc()
+            get_abi()
+            find_solc_versions()
+            find_best_solc_version()
+            _get_solc_version_list()
+            _get_unique_build_json()
+            _format_link_references()
+            _remove_metadata()
+            _generate_coverage_data()
+            _find_revert_offset()
+            _set_invalid_error_string()
+            _get_active_fn()
+            _get_nodes()
+            _get_statement_nodes()
+            _get_branch_nodes()
+            _get_recursive_branches()
+            _is_rightmost_operation()
+            _check_left_operator()
+
+        utils.py
+            expand_source_map()
+            _expand_row()
+            merge_natspec()
+
+        vyper.py
+            get_version()
+            get_abi()
+            compile_from_input_json()
+            _get_unique_build_json()
+            _get_dependencies()
+            _generate_coverage_data()
+            _convert_src()
+            _find_node_by_offset()
+            _get_statement_nodes()
+
+    __init__.py
+        __all__
+        __console_dir__
+
+    build.py
+        DEPLOYMENT_KEYS
+        BUILD_KEYS
+        _revert_map
+        Build
+            _add()
+            _generate_revert_map()
+            _remove()
+            get()
+            items()
+            contains()
+            get_dependents()
+            _stem()
+        _get_dev_revert()
+        _get_error_source_from_pc()
+
+    ethpm.py
+        URI_REGEX
+        REGISTRY_ABI
+        get_manifest()
+        process_manifest()
+        is_uri()
+        _get_uri_contents()
+        get_deployment_addresses()
+        get_installed_packages()
+        install_package()
+        remove_package()
+        create_manifest()
+        verify_manifest()
+        release_package()
+        _get_contract_type()
+        _load_packages_json()
+        _remove_empty_fields()
+        _verify_package_name()
+        _get_path_list()
+        _get_json_interfaces()
+
+    main.py
+        FOLDERS
+        MIXES_URL
+        GITIGNORE
+        GITATTRIBUTES
+        _loaded_projects
+        _ProjectBase
+            _compile()
+            _create_containers()
+            dict()
+            keys()
+        Project
+            load()
+            _get_changed_contracts()
+            _load_interface_hashes()
+            _save_interface_hashes()
+            _compare_build_json()
+            _load_deployments()
+            _update_and_register()
+            _add_to_main_namespace()
+            _remove_from_main_namespace()
+            load_config()
+            close()
+        TempProject
+        check_for_project()
+        get_loaded_projects()
+        new()
+        from_brownie_mix()
+        from_ethpm()
+        _new_checks()
+        compile_source()
+        load()
+        _install_dependencies()
+        install_package()
+        _install_from_ethpm()
+        _install_from_github()
+        _create_gitfiles()
+        _create_folders()
+        _add_to_sys_path()
+        _compare_settings()
+        _load_sources()
+        _stream_download()
+
+    scripts.py
+        _import_cache
+        run()
+        _get_path()
+        _import_from_path()
+        _get_ast_hash()
+
+    sources.py
+        Sources
+            get()
+            get_path_list()
+            get_contract_list()
+            get_interface_list()
+            get_interface_hashes()
+            get_interface_sources()
+            get_source_path()
+        is_inside_offset()
+        highlight_source()
+        get_contract_names()
+        get_pragma_spec()
+
+
+test
+    managers
+        __init__.py
+
+        base.py
+            PytestBrownieBase
+                _path()
+                _test_id()
+                _get_hash()
+                pytest_configure()
+                _make_nodemap()
+                pytest_sessionstart()
+                pytest_report_teststatus()
+                _sessionfinish_coverage()
+                pytest_keyboard_interrupt()
+
+        master.py
+            PytestBrownieMaster
+                pytest_xdist_make_scheduler()
+                pytest_xdist_node_collection_finished()
+                pytest_sessionfinish()
+
+        runner.py
+            _make_fixture_execute_first()
+            revert_deprecation()
+            RevertContextManager
+                __enter__()
+                __exit__()
+            PytestPrinter
+                start()
+                __call__()
+                finish()
+            PytestBrownieRunner
+                pytest_generate_tests()
+                pytest_collection_modifyitems()
+                _check_updated()
+                _make_nodemap()
+                pytest_runtest_protocol()
+                pytest_runtest_logreport()
+                pytest_report_teststatus()
+                pytest_sessionfinish()
+                _sessionfinish()
+            PytestBrownieXdistRunner
+                pytest_collection_modifyitems()
+                pytest_sessionfinish()
+
+        utils.py
+            OUTCOMES
+            convert_outcome()
+
+    __init__.py
+        given()
+
+    coverage.py
+        _coverage_eval
+        _cached
+        _active_txhash
+        get_coverage_eval()
+        get_merged_coverage_eval()
+        clear()
+        _add_transaction()
+        _add_cached_transaction()
+        _check_cached()
+        _get_active_txlist()
+        _clear_active_txlist()
+
+    fixtures.py
+        _generate_fixture()
+        PytestBrownieFixtures
+            module_isolation (pytest.fixture)
+            fn_isolation (pytest.fixture)
+            accounts (pytest.fixture)
+            a (pytest.fixture)
+            history (pytest.fixture)
+            rpc (pytest.fixture)
+            web3 (pytest.fixture)
+            pm (pytest.fixture)
+            no_call_coverage (pytest.fixture)
+            skip_coverage (pytest.fixture)
+            state_machine (pytest.fixture)
+
+        output.py
+            COVERAGE_COLORS
+            _save_coverage_report()
+            _print_gas_profile()
+            _print_coverage_totals()
+            _cov_color()
+            _pct()
+            _get_totals()
+            _split_by_fn()
+            _split()
+            _statement_totals()
+            _branch_totals()
+            _get_highlights()
+            _statement_highlights()
+            _statement_color()
+            _branch_highlights()
+            _branch_color()
+
+        plugin.py
+            pytest_addoption()
+            pytest_configure()
+
+        stateful.py
+            __tracebackhide__
+            sf.__tracebackhide__
+            marker
+            _BrownieStateMachine
+                execute_step()
+                check_invariants()
+            _member_filter()
+            _attr_filter()
+            _generate_state_machine()
+            state_machine()
+
+        strategies.py
+            TYPE_STR_TRANSLATIONS
+            ArrayLengthType
+            NumberType
+            _DeferredStrategyRepr
+            _exclude_filter()
+            _check_numeric_bounds()
+            _integer_strategy (_exclude_filter)
+            _decimal_strategy (_exclude_filter)
+            _address_strategy (_exclude_filter)
+            _bytes_strategy (_exclude_filter)
+            _string_strategy (_exclude_filter)
+            _get_array_length()
+            _array_strategy()
+            _tuple_strategy()
+            strategy()
+
+
+utils
+    __init__.py
+        color
+
+    color.py
+        BASE
+        MODIFIERS
+        COLORS
+        NOTIFY_COLORS
+        base_path
+        Color
+            __call__()
+            pretty_dict()
+            pretty_sequence()
+            _write()
+            format_tb()
+            format_syntaxerror()
+        notify()
+
+    docopt.py
+        __all__
+        __version__
+        levenshtein_norm()
+        levenshtein()
+        DocoptLanguageError
+        DocoptExit
+        Pattern
+            name (property)
+        transform()
+        TSingleMatch
+        LeafPattern
+            single_match()
+            flat()
+            match()
+        BranchPattern
+            match()
+            fix()
+            fix_identities()
+            fix_repeating_arguments()
+            flat()
+        Argument
+            single_match()
+        Command
+            single_match()
+        Option
+            parse (classmethod)
+            single_match()
+            name (property)
+        Required
+            match()
+        NotRequired
+            match()
+        OptionsShortcut
+        OneOrMore
+            match()
+        Either
+            match()
+        Tokens
+            from_pattern (staticmethod)
+            move()
+            current()
+        parse_longer()
+        parse_shorts()
+        parse_pattern()
+        parse_expr()
+        parse_seq()
+        parse_atom()
+        parse_argv()
+        parse_defaults()
+        parse_section()
+        formal_usage()
+        extras()
+        ParsedOptions
+        docopt()
+        magic
+
+    sql.py
+        Cursor
+            connect()
+            insert()
+            execute()
+            fetchone()
+            fetchall()
+            close()
+
+
+__init__.py
+    config
+    __all__
+
+
+_config.py
+    BROWNIE_FOLDER
+    DATA_FOLDER
+    DATA_SUBFOLDERS
+    EVM_EQUIVALENTS
+    ConfigContainer
+        set_active_network()
+        clear_active()
+        active_network (property)
+        network_type (property)
+        mode (property)
+    ConfigDict
+        _lock()
+        _unlock()
+        _copy()
+    _get_project_config_path()
+    _load_config()
+    _load_project_config()
+    _load_project_compiler_config()
+    _load_project_dependencies()
+    _modify_hypothesis_settings()
+    _recursive_update()
+    _update_argv_from_docopt()
+    _get_data_folder()
+    _make_data_folders()
+    CONFIG
+
+
+_singleton.py
+    _Singleton
+
+
+typing.py
+    AccountsType
+    TransactionReceiptType
